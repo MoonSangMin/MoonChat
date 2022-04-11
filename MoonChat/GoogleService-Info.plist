@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>60927153484-qcmechih31ub7vv2m1q2inqchf6mabpa.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.60927153484-qcmechih31ub7vv2m1q2inqchf6mabpa</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDoPxa3uVADndfrMEdh66fuVi0yJU4t-vU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>60927153484</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Moon.MoonChat</string>
+	<key>PROJECT_ID</key>
+	<string>moonchat-15cda</string>
+	<key>STORAGE_BUCKET</key>
+	<string>moonchat-15cda.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:60927153484:ios:aecd706b53a04b6575abe9</string>
+</dict>
+</plist>
