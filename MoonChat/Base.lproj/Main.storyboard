@@ -1,24 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoonChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="35" y="64"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="G57-6N-q5G">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="pQO-gs-yde" customClass="LoginViewController" customModule="MoonChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TXC-7E-oZz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading_icon" translatesAutoresizingMaskIntoConstraints="NO" id="V14-aS-Ww7">
+                                <rect key="frame" x="157" y="184" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="G3d-ME-B5b"/>
+                                    <constraint firstAttribute="width" constant="100" id="lCf-nt-Q2G"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yxr-vC-wXK" customClass="HoshiTextField" customModule="MoonChat">
+                                <rect key="frame" x="27" y="364" width="360" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="E3O-Ff-QnA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="tJY-Zd-9ov"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0XN-Ht-cpG" customClass="HoshiTextField" customModule="MoonChat">
+                                <rect key="frame" x="27" y="428" width="360" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BRl-WN-fkk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="qoQ-5P-AHd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" systemColor="opaqueSeparatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGu-bk-rnz">
+                                <rect key="frame" x="27" y="492" width="360" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NMT-S9-soK"/>
+                                    <constraint firstAttribute="width" constant="360" id="YRD-Cl-yCf"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbN-Tk-8Cf">
+                                <rect key="frame" x="27" y="556" width="360" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="3mw-jV-NZX"/>
+                                    <constraint firstAttribute="height" constant="40" id="o73-i3-IEW"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xdp-DX-5pZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0XN-Ht-cpG" firstAttribute="centerX" secondItem="TXC-7E-oZz" secondAttribute="centerX" id="3yp-9J-xTL"/>
+                            <constraint firstItem="yxr-vC-wXK" firstAttribute="top" secondItem="V14-aS-Ww7" secondAttribute="bottom" constant="80" id="8WQ-wu-EuR"/>
+                            <constraint firstItem="VGu-bk-rnz" firstAttribute="top" secondItem="0XN-Ht-cpG" secondAttribute="bottom" constant="24" id="9wC-KG-c7D"/>
+                            <constraint firstItem="V14-aS-Ww7" firstAttribute="centerX" secondItem="TXC-7E-oZz" secondAttribute="centerX" id="FYG-R7-2L8"/>
+                            <constraint firstItem="yxr-vC-wXK" firstAttribute="centerX" secondItem="TXC-7E-oZz" secondAttribute="centerX" id="JOn-W1-H3q"/>
+                            <constraint firstItem="VGu-bk-rnz" firstAttribute="centerX" secondItem="TXC-7E-oZz" secondAttribute="centerX" id="U3I-8M-E17"/>
+                            <constraint firstItem="GbN-Tk-8Cf" firstAttribute="top" secondItem="VGu-bk-rnz" secondAttribute="bottom" constant="24" id="fB9-OU-sP6"/>
+                            <constraint firstItem="0XN-Ht-cpG" firstAttribute="top" secondItem="yxr-vC-wXK" secondAttribute="bottom" constant="24" id="hM6-GM-XuX"/>
+                            <constraint firstItem="V14-aS-Ww7" firstAttribute="top" secondItem="xdp-DX-5pZ" secondAttribute="top" constant="140" id="k2K-KC-g8M"/>
+                            <constraint firstItem="GbN-Tk-8Cf" firstAttribute="centerX" secondItem="TXC-7E-oZz" secondAttribute="centerX" id="r3O-hX-Laj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="signInButton" destination="VGu-bk-rnz" id="Q28-9o-tZP"/>
+                        <outlet property="signUpButton" destination="GbN-Tk-8Cf" id="Xwl-Tw-pF8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T5K-Bc-k5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900.00000000000011" y="63.616071428571423"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0XN-Ht-cpG">
+            <size key="intrinsicContentSize" width="93" height="33.5"/>
+        </designable>
+        <designable name="yxr-vC-wXK">
+            <size key="intrinsicContentSize" width="55" height="33.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="loading_icon" width="64" height="64"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

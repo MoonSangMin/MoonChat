@@ -1,21 +1,34 @@
-//
-//  ViewController.swift
-//  MoonChat
-//
-//  Created by 문상민 on 2022/04/12.
-//
-
 import UIKit
 import SnapKit
-import SwiftUI
+import Firebase
 
 class ViewController: UIViewController {
     
     var box = UIImageView()
     var image: UIImage = UIImage(named: "loading_icon")!
+    var remoteConfig: RemoteConfig!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+        remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
+        
+        remoteConfig.fetch { (status, error) -> Void in
+          if status == .success {
+            print("Config fetched!")
+            self.remoteConfig.activate { changed, error in
+              // ...
+            }
+          } else {
+            print("Config not fetched")
+            print("Error: \(error?.localizedDescription ?? "No error available.")")
+          }
+          self.displayWelcome()
+        }
+        
         self.view.addSubview(box)
         box.snp.makeConstraints{ (make) in
             make.center.equalTo(self.view)
@@ -25,8 +38,30 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(rgb: 0x123456).withAlphaComponent(1.0)
     }
 
-
+    func displayWelcome() {
+        let color = remoteConfig["splash_background"].stringValue
+        let caps = remoteConfig["splash_message_caps"].boolValue
+        let message = remoteConfig["splash_message"].stringValue
+        
+        if(caps){
+            let alert = UIAlertController(title: "공지사항", message: message, preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .default, handler: { (action) in
+                exit(0)
+            })
+            
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+            
+            self.present(loginVC, animated: false, completion: nil)
+            
+        }
+        
+        self.view.backgroundColor = UIColor(rgb: Int(color!) ?? 0).withAlphaComponent(1.0)
+    }
 }
+
 
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int, a: Int = 0xFF) {
