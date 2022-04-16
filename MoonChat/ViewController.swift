@@ -3,7 +3,6 @@ import SnapKit
 import Firebase
 
 class ViewController: UIViewController {
-    
     var box = UIImageView()
     var image: UIImage = UIImage(named: "loading_icon")!
     var remoteConfig: RemoteConfig!
