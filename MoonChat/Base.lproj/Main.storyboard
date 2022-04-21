@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="YRD-Cl-yCf"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Sign in">
+                                <state key="normal" title="로그인">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -78,7 +78,7 @@
                                     <constraint firstAttribute="height" constant="40" id="o73-i3-IEW"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Sign up">
+                                <state key="normal" title="회원가입">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -219,18 +219,41 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="취소"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_profile" translatesAutoresizingMaskIntoConstraints="NO" id="la2-Qy-66h">
+                                <rect key="frame" x="157" y="104" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="RRW-ub-8mp"/>
+                                    <constraint firstAttribute="height" constant="100" id="fg4-y5-pzY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Coc-1g-reh">
+                                <rect key="frame" x="157" y="224" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="2Yj-pA-NH1"/>
+                                    <constraint firstAttribute="height" constant="35" id="ev9-nS-WWi"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="이미지 추가"/>
+                                <connections>
+                                    <action selector="addProfileImage:" destination="vAx-LH-WHg" eventType="touchUpInside" id="dVE-AV-oEP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XeD-sD-zEz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="la2-Qy-66h" firstAttribute="centerX" secondItem="vjn-UD-rbq" secondAttribute="centerX" id="0MZ-Pu-Rko"/>
                             <constraint firstItem="fCr-EY-odN" firstAttribute="top" secondItem="vUc-UE-CQX" secondAttribute="bottom" constant="24" id="ByV-8Y-XbH"/>
                             <constraint firstItem="Dlf-pT-Yo8" firstAttribute="top" secondItem="LYt-hB-lxs" secondAttribute="bottom" constant="24" id="EvU-rg-Zty"/>
                             <constraint firstItem="fCr-EY-odN" firstAttribute="centerX" secondItem="vjn-UD-rbq" secondAttribute="centerX" id="H0G-wa-g0v"/>
                             <constraint firstItem="vUc-UE-CQX" firstAttribute="centerX" secondItem="vjn-UD-rbq" secondAttribute="centerX" id="LYm-aq-TnN"/>
                             <constraint firstItem="LYt-hB-lxs" firstAttribute="centerX" secondItem="vjn-UD-rbq" secondAttribute="centerX" id="dGt-Vm-mgE"/>
+                            <constraint firstItem="Coc-1g-reh" firstAttribute="top" secondItem="la2-Qy-66h" secondAttribute="bottom" constant="20" id="gUZ-Ce-YXF"/>
                             <constraint firstItem="vUc-UE-CQX" firstAttribute="top" secondItem="Dlf-pT-Yo8" secondAttribute="bottom" constant="24" id="hrw-xM-lqU"/>
+                            <constraint firstItem="la2-Qy-66h" firstAttribute="top" secondItem="XeD-sD-zEz" secondAttribute="top" constant="60" id="kab-iw-a8c"/>
                             <constraint firstItem="LYt-hB-lxs" firstAttribute="top" secondItem="XeD-sD-zEz" secondAttribute="top" constant="256" id="kj1-vP-3cf"/>
                             <constraint firstItem="Dlf-pT-Yo8" firstAttribute="centerX" secondItem="vjn-UD-rbq" secondAttribute="centerX" id="ozz-RI-eWF"/>
+                            <constraint firstItem="Coc-1g-reh" firstAttribute="centerX" secondItem="vjn-UD-rbq" secondAttribute="centerX" id="qlm-NX-Ms3"/>
                             <constraint firstItem="GvA-Xo-7qK" firstAttribute="centerX" secondItem="vjn-UD-rbq" secondAttribute="centerX" id="sUE-1p-Su3"/>
                             <constraint firstItem="GvA-Xo-7qK" firstAttribute="top" secondItem="fCr-EY-odN" secondAttribute="bottom" constant="24" id="v5c-um-YPB"/>
                         </constraints>
@@ -240,6 +263,7 @@
                         <outlet property="cancelButton" destination="GvA-Xo-7qK" id="Ezp-Kw-06U"/>
                         <outlet property="email" destination="LYt-hB-lxs" id="Bpu-6b-Zwg"/>
                         <outlet property="password" destination="vUc-UE-CQX" id="HTj-eq-OEc"/>
+                        <outlet property="profileImageView" destination="la2-Qy-66h" id="zTW-hl-Fvw"/>
                         <outlet property="signupButton" destination="fCr-EY-odN" id="REt-pQ-6vR"/>
                     </connections>
                 </viewController>
@@ -266,6 +290,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="add_profile" width="512" height="512"/>
         <image name="loading_icon" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -2,17 +2,22 @@ import UIKit
 import Firebase
 import TextFieldEffects
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet var email: HoshiTextField!
     @IBOutlet var ID: HoshiTextField!
     @IBOutlet var password: HoshiTextField!
     @IBOutlet var signupButton: UIButton!
     @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var profileImageView: UIImageView!
     var ref: DatabaseReference!
     
     let remoteconfig = RemoteConfig.remoteConfig()
     var color: String!
+    
+    @IBAction func addProfileImage(_ sender: Any) {
+        imagePicker()
+    }
     
     override func viewDidLoad() {
         color = remoteconfig["splash_background"].stringValue
@@ -21,6 +26,21 @@ class SignupViewController: UIViewController {
         
         signupButton.addTarget(self, action: #selector(signupEvent), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(cancelEvent), for: .touchUpInside)
+    }
+    
+    func imagePicker(){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        profileImageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func signupEvent(){
