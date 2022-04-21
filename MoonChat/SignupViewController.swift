@@ -1,9 +1,9 @@
 import UIKit
 import Firebase
+import FirebaseStorage
 import TextFieldEffects
 
 class SignupViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
     @IBOutlet var email: HoshiTextField!
     @IBOutlet var ID: HoshiTextField!
     @IBOutlet var password: HoshiTextField!
@@ -48,7 +48,16 @@ class SignupViewController: UIViewController, UINavigationControllerDelegate, UI
             //err code별로 예외처리 필요
             self.ref = Database.database().reference()
             let uid = user?.user.uid
-            self.ref.child("users/\(uid!)/userID").setValue(self.ID.text!)
+            let image = self.profileImageView.image?.jpegData(compressionQuality: 0.3)
+            let imagesRef = Storage.storage().reference().child("userImages").child(uid!)
+            
+            imagesRef.putData(image!, metadata: nil) { (data, error) in
+                imagesRef.downloadURL{ (url, error) in
+                    guard let downloadURL = url else { return }
+                    self.ref.child("users/\(uid!)/userID").setValue(self.ID.text!)
+                    self.ref.child("users/\(uid!)/profileImageURL").setValue(downloadURL.absoluteString)
+                }
+            }
         }
     }
     

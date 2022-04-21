@@ -25,6 +25,7 @@
 		1897662C28049CB40040EBE3 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1897662B28049CB40040EBE3 /* RemoteConfigDefaults.plist */; };
 		18B9B13E2808741A0015B2C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B9B13D2808741A0015B2C0 /* LoginViewController.swift */; };
 		18BF795D280ACCBC006FE02B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF795C280ACCBC006FE02B /* SignupViewController.swift */; };
+		18EB48692811A42E00982D41 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 18EB48682811A42E00982D41 /* FirebaseStorage */; };
 		2183EC133C724E9825D61200 /* Pods_MoonChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891947C7E2A8678149D8B511 /* Pods_MoonChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 				182548D8280B0237004AA189 /* FirebaseRemoteConfig in Frameworks */,
 				186A7CE1280B013100954044 /* FirebaseDatabase in Frameworks */,
 				18942EE0280484E700D22D4B /* FirebaseAnalytics in Frameworks */,
+				18EB48692811A42E00982D41 /* FirebaseStorage in Frameworks */,
 				18942EE2280484E700D22D4B /* FirebaseRemoteConfig in Frameworks */,
 				186A7CE3280B013100954044 /* FirebaseRemoteConfig in Frameworks */,
 				2183EC133C724E9825D61200 /* Pods_MoonChat.framework in Frameworks */,
@@ -148,6 +150,7 @@
 				182548D3280B0237004AA189 /* FirebaseAuth */,
 				182548D5280B0237004AA189 /* FirebaseDatabase */,
 				182548D7280B0237004AA189 /* FirebaseRemoteConfig */,
+				18EB48682811A42E00982D41 /* FirebaseStorage */,
 			);
 			productName = MoonChat;
 			productReference = 18942EC52804806800D22D4B /* MoonChat.app */;
@@ -180,6 +183,7 @@
 			packageReferences = (
 				18942EDE280484E700D22D4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				182548D2280B0237004AA189 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				18EB48672811A42E00982D41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 18942EC62804806800D22D4B /* Products */;
 			projectDirPath = "";
@@ -496,6 +500,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		18EB48672811A42E00982D41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -538,6 +550,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 18942EDE280484E700D22D4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
+		};
+		18EB48682811A42E00982D41 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18942EDE280484E700D22D4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
