@@ -45,17 +45,31 @@ class SignupViewController: UIViewController, UINavigationControllerDelegate, UI
     
     @objc func signupEvent(){
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, err) in
-            //err code별로 예외처리 필요
-            self.ref = Database.database().reference()
-            let uid = user?.user.uid
-            let image = self.profileImageView.image?.jpegData(compressionQuality: 0.3)
-            let imagesRef = Storage.storage().reference().child("userImages").child(uid!)
-            
-            imagesRef.putData(image!, metadata: nil) { (data, error) in
-                imagesRef.downloadURL{ (url, error) in
-                    guard let downloadURL = url else { return }
-                    self.ref.child("users/\(uid!)/userID").setValue(self.ID.text!)
-                    self.ref.child("users/\(uid!)/profileImageURL").setValue(downloadURL.absoluteString)
+            if let err = err {
+                print("create user error : \(err)")
+            }
+            else {
+                self.ref = Database.database().reference()
+                let uid = user?.user.uid
+                let image = self.profileImageView.image?.jpegData(compressionQuality: 0.3)
+                let imagesRef = Storage.storage().reference().child("userImages").child(uid!)
+                
+                imagesRef.putData(image!, metadata: nil) { (data, err) in
+                    if let err = err {
+                        print("put data error : \(err)")
+                    }
+                    else {
+                        imagesRef.downloadURL{ (url, err) in
+                            if let err = err {
+                                print("download URL error : \(err)")
+                            }
+                            else {
+                                guard let downloadURL = url else { return }
+                                self.ref.child("users/\(uid!)/userID").setValue(self.ID.text!)
+                                self.ref.child("users/\(uid!)/profileImageURL").setValue(downloadURL.absoluteString)
+                            }
+                        }
+                    }
                 }
             }
         }
