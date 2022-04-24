@@ -10,6 +10,7 @@
 		182548D4280B0237004AA189 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 182548D3280B0237004AA189 /* FirebaseAuth */; };
 		182548D6280B0237004AA189 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 182548D5280B0237004AA189 /* FirebaseDatabase */; };
 		182548D8280B0237004AA189 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 182548D7280B0237004AA189 /* FirebaseRemoteConfig */; };
+		184BE8A62815BFCB00AD683F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BE8A52815BFCB00AD683F /* MainViewController.swift */; };
 		186A7CDF280B013100954044 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 186A7CDE280B013100954044 /* FirebaseAuth */; };
 		186A7CE1280B013100954044 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 186A7CE0280B013100954044 /* FirebaseDatabase */; };
 		186A7CE3280B013100954044 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 186A7CE2280B013100954044 /* FirebaseRemoteConfig */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		182548D9280B11BE004AA189 /* MoonChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoonChat.entitlements; sourceTree = "<group>"; };
+		184BE8A52815BFCB00AD683F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		18942EC52804806800D22D4B /* MoonChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoonChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18942EC82804806800D22D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18942ECA2804806800D22D4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				18942ED62804806A00D22D4B /* Info.plist */,
 				18942EDC2804832700D22D4B /* GoogleService-Info.plist */,
 				18BF795C280ACCBC006FE02B /* SignupViewController.swift */,
+				184BE8A52815BFCB00AD683F /* MainViewController.swift */,
 			);
 			path = MoonChat;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				18B9B13E2808741A0015B2C0 /* LoginViewController.swift in Sources */,
 				18942ECD2804806800D22D4B /* ViewController.swift in Sources */,
 				18BF795D280ACCBC006FE02B /* SignupViewController.swift in Sources */,
+				184BE8A62815BFCB00AD683F /* MainViewController.swift in Sources */,
 				18942EC92804806800D22D4B /* AppDelegate.swift in Sources */,
 				18942ECB2804806800D22D4B /* SceneDelegate.swift in Sources */,
 			);

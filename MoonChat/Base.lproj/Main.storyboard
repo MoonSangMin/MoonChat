@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="qoQ-5P-AHd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                         <color key="value" systemColor="systemGray2Color"/>
@@ -129,6 +129,21 @@
             </objects>
             <point key="canvasLocation" x="900.00000000000011" y="63.616071428571423"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="WbS-o9-EKk">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="RD1-lh-3DT" customClass="MainViewController" customModule="MoonChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dto-ZF-Lxq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Aqf-SB-fWm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQN-rm-Chy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1742" y="64"/>
+        </scene>
         <!--Signup View Controller-->
         <scene sceneID="idq-km-mvl">
             <objects>
@@ -184,7 +199,7 @@
                                     <constraint firstAttribute="height" constant="40" id="flS-Be-1xW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
                                         <color key="value" systemColor="systemRedColor"/>
@@ -274,7 +289,7 @@
     </scenes>
     <designables>
         <designable name="0XN-Ht-cpG">
-            <size key="intrinsicContentSize" width="99" height="30.5"/>
+            <size key="intrinsicContentSize" width="99" height="29"/>
         </designable>
         <designable name="Dlf-pT-Yo8">
             <size key="intrinsicContentSize" width="33" height="30.5"/>
@@ -283,7 +298,7 @@
             <size key="intrinsicContentSize" width="61" height="30.5"/>
         </designable>
         <designable name="vUc-UE-CQX">
-            <size key="intrinsicContentSize" width="99" height="30.5"/>
+            <size key="intrinsicContentSize" width="99" height="29"/>
         </designable>
         <designable name="yxr-vC-wXK">
             <size key="intrinsicContentSize" width="61" height="30.5"/>
