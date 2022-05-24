@@ -289,19 +289,19 @@
     </scenes>
     <designables>
         <designable name="0XN-Ht-cpG">
-            <size key="intrinsicContentSize" width="99" height="29"/>
+            <size key="intrinsicContentSize" width="113" height="34"/>
         </designable>
         <designable name="Dlf-pT-Yo8">
-            <size key="intrinsicContentSize" width="33" height="30.5"/>
+            <size key="intrinsicContentSize" width="47" height="35.5"/>
         </designable>
         <designable name="LYt-hB-lxs">
-            <size key="intrinsicContentSize" width="61" height="30.5"/>
+            <size key="intrinsicContentSize" width="75" height="35.5"/>
         </designable>
         <designable name="vUc-UE-CQX">
-            <size key="intrinsicContentSize" width="99" height="29"/>
+            <size key="intrinsicContentSize" width="113" height="34"/>
         </designable>
         <designable name="yxr-vC-wXK">
-            <size key="intrinsicContentSize" width="61" height="30.5"/>
+            <size key="intrinsicContentSize" width="75" height="35.5"/>
         </designable>
     </designables>
     <resources>

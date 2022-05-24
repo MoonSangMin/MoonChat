@@ -3,8 +3,8 @@ import Firebase
 import TextFieldEffects
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet var email: UITextField!
-    @IBOutlet var password: UITextField!
+    @IBOutlet var email: HoshiTextField!
+    @IBOutlet var password: HoshiTextField!
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var signUpButton: UIButton!
     let remoteconfig = RemoteConfig.remoteConfig()
@@ -22,8 +22,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         signUpButton.addTarget(self, action: #selector(presentSignup), for: .touchUpInside)
         signInButton.addTarget(self, action: #selector(loginEvent), for: .touchUpInside)
-        
-        email.becomeFirstResponder()
         
         
         Auth.auth().addStateDidChangeListener{ (auth, user) in
